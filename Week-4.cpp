@@ -61,7 +61,20 @@ public:
     }
 };
 
+//check if power of 3 (on leetcode)
 
-
-
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        long int i=1;
+        while(i<n)
+        {
+            i*=3;
+        }
+        if(i==n)
+            return true;
+        else
+            return false;
+    }
+};
 
