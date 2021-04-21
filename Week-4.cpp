@@ -78,3 +78,17 @@ public:
     }
 };
 
+//sort based on no of bits(done on GFG)
+//__builtin_popcount(integer) compares the bits, included in c++ library
+class Solution {
+public:
+    static bool comp(int a, int b)
+    {
+        return __builtin_popcount(a)>__builtin_popcount(b);
+    }
+   void sortByBits(int arr[]) {
+        int n = sizeof(arr)/sizeof(arr[0]);
+       stable_sort(arr,arr+n,comp);
+    }
+};
+
