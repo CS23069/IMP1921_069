@@ -114,3 +114,12 @@ public:
         return res;
     }
 };
+//swapping all the even bits and the odd bits (pdf) (basic idea)
+
+unsigned int even_bits = x & 0xAAAAAAAA; //to get all even bits
+unsigned int odd_bits = X & 0x55555555;  // to get all odd bits
+
+even_bits >>= 1;  //shifting even bits to right by one and the odd bits to teh left by one
+odd_bits <<=1;
+
+return (even_bits | odd_bits); 
