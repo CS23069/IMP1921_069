@@ -123,3 +123,27 @@ even_bits >>= 1;  //shifting even bits to right by one and the odd bits to teh l
 odd_bits <<=1;
 
 return (even_bits | odd_bits); 
+//Last week's Merge two sorted linked lists(leetcode)
+struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
+    
+    if(l1==NULL)
+    {
+        return l2;
+    }
+    else if(l2==NULL)
+    {
+        return l1;
+    }
+  struct  ListNode* result;
+    if(l1->val < l2->val)
+    {
+        result=l1;
+        result->next=mergeTwoLists(l1->next,l2);
+    }
+    else
+    {
+        result=l2;
+        result->next=mergeTwoLists(l1,l2->next);
+    }
+return result;
+}
