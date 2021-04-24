@@ -91,4 +91,26 @@ public:
        stable_sort(arr,arr+n,comp);
     }
 };
-
+//complement of a number (leetcode)
+class Solution {
+public:
+    int findComplement(int num) {
+        if(num==0)
+            return 1;
+        int num_bits=log2(num) + 1;
+        int mask = (unsigned)(1 << num_bits) - 1;
+        return num^mask;
+    }
+};
+//XOR operation in array(leetcode)
+class Solution {
+public:
+    int xorOperation(int n, int start) {
+        int res= start;
+        for(int i=1 ; i<n ; i++)
+        {
+            res ^= (start +(2*i));
+        }
+        return res;
+    }
+};
